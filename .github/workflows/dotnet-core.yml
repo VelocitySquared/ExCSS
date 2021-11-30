@@ -38,9 +38,7 @@ jobs:
         release_branches: master,main
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Pack
-      run: dotnet pack src/ExCSS/ExCSS.csproj -c Release --no-restore --version-suffix "${{ steps.version.outputs.new_version }}"
-    
-    - name: Publish 
-      run: dotnet nuget push "src/ExCSS/bin/Release/*.nupkg" --skip-duplicate --source "https://nuget.pkg.github.com/VelocitySquared/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
-
+    - name: Publish
+      run: |
+           dotnet pack src/ExCSS/ExCSS.csproj -c Release --no-restore --version-suffix "${{ steps.version.outputs.new_version }}"
+           dotnet nuget push ".\src\ExCSS\bin\Release\*.nupkg" --skip-duplicate --source "https://nuget.pkg.github.com/VelocitySquared/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
