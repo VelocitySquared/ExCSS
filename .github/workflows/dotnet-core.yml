@@ -42,5 +42,5 @@ jobs:
       run: dotnet pack ./src/ExCSS/ExCSS.csproj -c Release --no-restore --version-suffix "${{ steps.version.outputs.new_version }}"
     
     - name: Publish 
-      run: dotnet nuget push "./src/ExCSS/bin/Release/ExCSS.VelocitySquared.*${{ steps.version.outputs.new_version }}.nupkg" --skip-duplicate --source "github"
+      run: dotnet nuget push "./src/ExCSS/bin/Release/ExCSS.VelocitySquared.*${{ steps.version.outputs.new_version }}.nupkg" --skip-duplicate --source "https://nuget.pkg.github.com/VelocitySquared/index.json" --api-key ${{ secrets.GITHUB_TOKEN }}
 
