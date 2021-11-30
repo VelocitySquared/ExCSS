@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -33,6 +34,9 @@ namespace ExCSS
                 PreserveDuplicateProperties = preserveDuplicateProperties,
             };
         }
+
+        public List<TokenizerError> PreviousParseErrors { get { return _errors; } }
+        private List<TokenizerError> _errors;
 
         internal ParserOptions Options { get; }
 
@@ -104,8 +108,12 @@ namespace ExCSS
 
         internal Stylesheet Parse(TextSource source)
         {
+            // reset the error list.
+            this._errors = new List<TokenizerError>();
+
             var sheet = new Stylesheet(this);
             var tokenizer = new Lexer(source);
+            tokenizer.Error += Record_Tokenizer_Error;
             var start = tokenizer.GetCurrentPosition();
             var builder = new StylesheetComposer(tokenizer, this);
             var end = builder.CreateRules(sheet);
@@ -202,6 +210,10 @@ namespace ExCSS
             var builder = new StylesheetComposer(tokenizer, this);
             var pair = create(builder, token);
             return pair.Item2.Type == TokenType.EndOfFile ? pair.Item1 : default;
+        }
+
+        private void Record_Tokenizer_Error(object sender, TokenizerError e) {
+            this._errors.Add(e);
         }
 
         private static Lexer CreateTokenizer(string sourceCode)
