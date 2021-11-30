@@ -8,7 +8,7 @@
 		<Title>ExCSS .NET Stylesheet Parser</Title>
 		<Authors>Tyler Brinks modified by VelocitySuqared</Authors>
 		<Description>A modified version of ExCSS.  ExCSS is a CSS 2.1 and CSS 3 parser for .NET. ExCSS makes it easy to read and parse stylesheets into a friendly object model with full LINQ support.</Description>
-		<RepositoryUrl>https://github.com/TylerBrinks/ExCSS</RepositoryUrl>
+		<RepositoryUrl>https://github.com/VelocitySquared/ExCSS</RepositoryUrl>
 		<VersionPrefix>4.0.2</VersionPrefix>
 		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
 		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
