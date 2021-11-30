@@ -4,12 +4,12 @@
 		<LangVersion>9.0</LangVersion>
 		<TargetFrameworks>net5.0;netcoreapp3.1;net452</TargetFrameworks>
 		<AssemblyName>ExCSS</AssemblyName>
-		<PackageId>ExCSS</PackageId>
+		<PackageId>ExCSS.VelocitySquared</PackageId>
 		<Title>ExCSS .NET Stylesheet Parser</Title>
-		<Authors>Tyler Brinks</Authors>
-		<Description>ExCSS is a CSS 2.1 and CSS 3 parser for .NET. ExCSS makes it easy to read and parse stylesheets into a friendly object model with full LINQ support.</Description>
+		<Authors>Tyler Brinks modified by VelocitySuqared</Authors>
+		<Description>A modified version of ExCSS.  ExCSS is a CSS 2.1 and CSS 3 parser for .NET. ExCSS makes it easy to read and parse stylesheets into a friendly object model with full LINQ support.</Description>
 		<RepositoryUrl>https://github.com/TylerBrinks/ExCSS</RepositoryUrl>
-		<PackageVersion>4.0.2</PackageVersion>
+		<VersionPrefix>4.0.2</VersionPrefix>
 		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
 		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
 		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
